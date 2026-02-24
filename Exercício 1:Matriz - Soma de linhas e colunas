@@ -1,0 +1,42 @@
+package com.mycompany.mainlista3;
+
+public class ExercicioMatriz1 extends ClasseAbstrata {
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 1:Matriz - Soma de linhas e colunas");
+        System.out.println("Crie um programa que calcule a soma de cada linha e cada coluna de uma matriz 3x3.");
+    }
+    @Override
+    public void executar(){
+        int [][] matriz={
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        };
+        //Laço de fora ( Percorre os 3 vetores, um por um)
+         System.out.println("-----SOMA DAS LINHAS-----");
+        for(int i =0 ; i<3 ; i++){
+            int somaLinha=0;
+            //Laço de dentro (percorre as 3 posições do vetor)
+            for(int j=0 ; j<3 ; j++){
+                somaLinha+=matriz [i][j];
+               
+            }
+            System.out.println("A soma da linha "+i+"."+1+":"+somaLinha);
+        }
+        //Soma colunas
+        //Laço de fora que aponta para a mesma posição(coluna)em todos os vetores
+        System.out.println("-------SOMA DAS COLUNAS-------");
+        for(int j=0 ; j<3 ; j++ ){
+            int somaColuna=0;
+            //Laço de drento que altera a linha
+            for(int i=0 ; i<3 ; i++ ){
+                somaColuna+=matriz[i][j];
+                
+            }
+            //Exibe na tela a soma da em cada laço de fora
+            System.out.println("Soma da coluna "+(j+1)+":"+somaColuna);
+        }
+    }
+    
+}
