@@ -1,0 +1,32 @@
+package com.mycompany.mainlista3;
+import java.util.Scanner;
+
+public class ExercicioMediaNotas4 extends ClasseAbstrata{
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 4 : Media de notas com validacao ");
+        System.out.println("Crie um programa que peca ao usuario para inserir 5 notas (0 a 10) e calcule a media, validando cada entrada.");
+    }
+    
+    @Override
+    public void executar(){
+        Scanner input =new Scanner(System.in);
+        double soma=0;
+        int contador=0;
+        
+        while(contador<5){
+            System.out.print("Digite a "+(contador+1)+" nota:");
+            double nota=input.nextDouble();
+            
+            if(nota>=0 & nota<=10){
+            soma+=nota;
+            contador++;
+            }else{
+                System.out.println("Nota invalida!");
+            }
+        
+        }
+        System.out.println("Media das notas:"+(soma/5));
+    }
+        
+}
