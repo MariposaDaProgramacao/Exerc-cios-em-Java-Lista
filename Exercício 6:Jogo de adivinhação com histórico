@@ -1,0 +1,50 @@
+package com.mycompany.mainlista3;
+import java.util.Random;//Biblioteca geradora de numeros aleatorios
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ExercicioAdvinhacao6 extends ClasseAbstrata{
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 6:Jogo de adivinhacao com historico");
+        System.out.println("Desenvolva um jogo onde o computador sorteia um numero e o usuario tenta adivinhar, mostrando um historico das tentativas. ");
+    }
+    
+    @Override
+    public void executar(){
+       //Numero aleatorio(tem que ser objeto)
+       Random numeroAleatorio=new Random();
+       //Scanner para receber numero de usuario
+       Scanner input=new Scanner(System.in);
+       //Gera o numero aleatorio de fato entre 1 e 50
+       int numero=numeroAleatorio.nextInt(11);
+       
+       //Vetor que armazena as tentativas do usuario
+       ArrayList<Integer>tentativas=new ArrayList<>();
+       //Variavel que armazena a tentativa da vez 
+       int palpite;
+       
+      //Estrutura do=while a ser executada ao menos uma vez
+      do{
+          //Solicita o  numero para o usuario
+          System.out.println("Informe um numero de 0 a 10:");
+          palpite=input.nextInt();
+          
+          //Armazena a tentativa no vetor
+          tentativas.add(palpite);
+          
+          //Verifica se o numero e igual ao sorteado
+          if(palpite!=numero){
+              System.out.println("EROUUUUUUUUU");
+              
+          }
+          
+      }while (palpite!=numero);  
+        
+      //Mensagens finais
+        System.out.println(" Acertou !");
+        System.out.println("O numero secreto era :"+numero);
+        System.out.println("Voce acertou em " + tentativas.size() + " tentativas!"); 
+        System.out.println(" Aqui esta o seu historico de tentativas"+tentativas);
+        }
+    }
