@@ -1,0 +1,6 @@
+package com.mycompany.mainlista3;
+
+public abstract class ClasseAbstrata {
+    public abstract void executar();
+    public abstract void titulo(); 
+}
