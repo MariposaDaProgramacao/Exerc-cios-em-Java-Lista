@@ -1,0 +1,44 @@
+package com.mycompany.mainlista3;
+import java.util.Arrays;
+
+public class ExercicioBuscaBinaria3 extends ClasseAbstrata {
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 3: Busca binaria");
+        System.out.println("Desenvolva uma funcao que implemente o algoritmo de busca binaria em uma lista ordenada. ");
+    }
+    
+    @Override
+    public void executar(){
+        int[]lista={2,4,6,8,10,12,14,16,18,20};
+        int alvo=16;
+        //Variaveis de apoio
+        int inicioLista=0;
+        int fimLista=lista.length-1;
+        boolean encontrado=false;
+        
+        System.out.println(Arrays.toString(lista));
+        System.out.println("O numero procurado e o:"+alvo);
+        
+        //Laço de repetição,procurar até encontrar o n16
+        while(inicioLista<=fimLista){
+            //Seleciona o meio da lista
+            int meioLista=(inicioLista+fimLista)/2;
+            //Verifica se o pivô já é o número procurado
+            if(lista[meioLista]==alvo){
+                System.out.println("Encontrado na posicao:"+meioLista);
+                encontrado=true;
+                break;
+            }else if(meioLista<alvo){
+                inicioLista=meioLista+1;
+            }else{
+            fimLista=meioLista-1;
+            
+            }
+        
+        }
+      if(!encontrado){
+          System.out.println("Elemento não encontrado");
+      }
+    }
+}
