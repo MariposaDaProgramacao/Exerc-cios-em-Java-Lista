@@ -1,0 +1,36 @@
+package com.mycompany.mainlista3;
+import java.util.Arrays;
+
+public class ExercicioBubbleSort2 extends ClasseAbstrata{
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 2: Bubble Sort");
+        System.out.println("Implemente o algoritmo Bubble Sort para ordenar uma lista de numeros.");
+    
+    }
+    
+    @Override
+    public void executar(){
+        
+        //Vetor a ser ordenado
+        int[]vetor={5,13,46,1,2,31,18,3};
+        
+        //Laço de fora, que acessa o vetor pelo começo
+        for (int i=0 ; i<vetor.length ; i++ ){
+            //Laço de drento que realiza as trocas
+            for(int j=0 ; j<vetor.length-1 ; j++){
+                //Condicional que verifica se há necessidade de troca
+                if(vetor[j]>vetor[j+1]){
+                    //Variavel "troca" reserva um dos valores
+                    int troca=vetor[j];
+                    //Mudança efetiva de posições
+                    vetor[j]=vetor[j+1];
+                    vetor[j+1]=troca;
+                    System.out.println(Arrays.toString(vetor));
+                }
+            }
+        }
+        System.out.println("...LISTA ORDENADA...");
+        System.out.println(Arrays.toString(vetor));
+    }
+}
