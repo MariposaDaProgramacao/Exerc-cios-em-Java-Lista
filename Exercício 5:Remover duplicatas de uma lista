@@ -1,0 +1,32 @@
+package com.mycompany.mainlista3;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class ExercicioDuplicatas5 extends ClasseAbstrata {
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 5:Remover duplicatas de uma lista ");
+        System.out.println("Escreva um programa que remova elementos duplicados de uma lista mantendo a ordem original.");
+    }
+    
+    @Override
+    public void executar(){
+        //Vetor a ser verificado
+        int[]numeros={1,2,2,3,1,4,3,7,9,7};
+        
+        //Array list que armazena os numeros sem repetição
+        ArrayList<Integer> novosNumeros=new ArrayList<>();
+        
+        //Laço for-each para percorrer todos o vetor
+        for(int n:numeros){
+            //Verifica se o numero não existe na novosNumeros
+            if(!novosNumeros.contains(n))
+                novosNumeros.add(n);
+            
+        }
+        //Exibe a nova lista sem numeros duplicados
+        System.out.println("Lista com duplicatas:"+Arrays.toString(numeros));
+        System.out.println("Lista sem duplicatas: " + novosNumeros); 
+    }
+    
+}
