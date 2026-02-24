@@ -1,0 +1,92 @@
+package com.mycompany.mainlista3;
+import java.util.Scanner;
+
+public class MainLista3 {
+
+    public static void main(String[] args) {
+ Scanner scanner = new Scanner(System.in);
+        int opcao;
+        
+        do {
+            // Exibir menu
+            System.out.println("\n===== MENU DE EXERCICIOS =====");
+            System.out.println("1 - Exercicio 1:Matriz - Soma de linhas e colunas");
+            System.out.println("2 - Exercicio 2:Bubble Sort");
+            System.out.println("3 - Exercicio 3:Busca binaria ");
+            System.out.println("4 - Exercicio 4:Media de notas com validacao");
+            System.out.println("5 - Exercicio 5:Remover duplicatas de uma lista");
+            System.out.println("6 - Exercicio 6: Jogo de adivinhacao com historico");
+            System.out.println("7 - Exercicio 7:Matriz transposta");
+            System.out.println("8 - Exercicio 8:Sistema de estoque simples");
+            System.out.println("9 - Exercicio 9: Analise de lista de numeros");
+            System.out.println("10 - Exercicio 10:Simulador de fila de atendimento");
+            System.out.println("0 - Sair");
+            System.out.println("==============================");
+            System.out.print("Escolha uma opcao: ");
+            
+            opcao = scanner.nextInt();
+            
+            // Processar a escolha
+            switch(opcao) {
+                case 1:
+                   new ExercicioMatriz1().titulo();
+                   new ExercicioMatriz1().executar();
+                    break;
+                    
+                case 2:
+                    new ExercicioBubbleSort2().titulo();
+                    new ExercicioBubbleSort2().executar();
+                    break;
+                    
+                case 3:
+                    new ExercicioBuscaBinaria3().titulo();
+                    new ExercicioBuscaBinaria3().executar();
+                    break;
+                    
+                case 4:
+                    new ExercicioMediaNotas4().titulo();
+                    new ExercicioMediaNotas4().executar();
+                    break;
+                    
+                case 5:
+                    new ExercicioDuplicatas5().titulo();
+                    new ExercicioDuplicatas5().executar();
+                    break;
+                    
+                case 6:
+                    new ExercicioAdvinhacao6().titulo();
+                    new ExercicioAdvinhacao6().executar();
+                    break;
+                    
+                case 7:
+                    new ExercicioMatrizTransposta7().titulo();
+                    new ExercicioMatrizTransposta7().executar();
+                    break;
+                    
+                case 8:
+                    new ExercicioEstoque8().titulo();
+                    new ExercicioEstoque8().executar();
+                    break;
+                    
+                case 9:
+                    new ExercicioListaNumeros9().titulo();
+                    new ExercicioListaNumeros9().executar();
+                    break;
+                    
+                case 10:
+                    new ExercicioSimuladordeFila10().titulo();
+                    new ExercicioSimuladordeFila10().executar();
+                    break;
+               
+                case 0:
+                    System.out.println("Encerrando o programa...");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+            }
+            
+        } while(opcao != 0);
+        
+        scanner.close();
+    }
+    }
