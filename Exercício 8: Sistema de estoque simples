@@ -1,0 +1,55 @@
+package com.mycompany.mainlista3;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ExercicioEstoque8 extends ClasseAbstrata{
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 8: Sistema de estoque simples");
+        System.out.println("Implemente um sistema de controle de estoque que permita adicionar, remover e listar produtos usando while. ");
+    }
+    
+    @Override
+    public void executar(){
+        //Scanner para leitura de dados do usuario(Objeto)
+        Scanner input=new Scanner(System.in);
+        
+        //Lista que armazena os itens do estoque(Objeto)
+        ArrayList<String>estoque=new ArrayList<>();
+        
+        //Variavel que controla o menu (1 a 4)
+        int opcao=0;
+        
+        //Loop do menu em execução até o "4-sair" pressionado
+        while(opcao!=4){
+            //Menu de opções
+            System.out.println("Ola! Bem vindo ao sistema de estoque Empilhado!");
+            System.out.println("Oque voce gostaria de fazer ?");
+            System.out.println("1-Adicionar um produto");
+            System.out.println("2-Remover um produto");
+            System.out.println("3-Listar os produtos");
+            System.out.println("4-Sair");
+            
+            //Le a escolha do usuario
+            opcao = input.nextInt();
+            input.nextLine();
+            
+            //Caso a escolha seja "1-Adicionar"
+            if(opcao==1){
+                System.out.print("Informe o nome do produto:");
+                estoque.add(input.nextLine());
+                System.out.println("Itens no estoque:");
+                System.out.println(estoque);
+            }else if(opcao==2){
+                System.out.print("Informe o nome do produto a ser removido:");
+                estoque.remove(input.nextLine());
+                System.out.println("Itens no estoque:");
+                System.out.println(estoque);
+            }else if(opcao==3){
+                System.out.println("Itens no estoque:");
+                System.out.println(estoque);
+            }
+        }
+        System.out.println("Saindo do estoque...");
+    }
+}
