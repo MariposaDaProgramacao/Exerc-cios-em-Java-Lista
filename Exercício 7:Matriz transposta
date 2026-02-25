@@ -1,0 +1,57 @@
+package com.mycompany.mainlista3;
+
+/**
+ *
+ * @author 1059121
+ */
+public class ExercicioMatrizTransposta7 extends ClasseAbstrata {
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 7:Matriz transposta");
+        System.out.println("Crie um programa que calcule a transposta de uma matriz usando lacos aninhados. ");
+    }
+    
+    @Override
+    public void executar(){
+        //Declaração da matriz original 2x3
+        int[][]matriz={
+            {1,2,3},
+            {4,5,6}
+        };
+        //Declara a matriz trsnposta ,como objeto 3x2
+        int [][]transposta=new int [3][2];
+        
+        //Laços de repetição que percorrem linhas e colunas da matriz
+        for (int i=0 ; i<matriz.length ; i++){
+            //Laço interno que percorre as colunas
+            for(int j=0 ; j<matriz[0].length ; j++){
+                //Atribui os valores, trocando linha por coluna
+                transposta[j][i]=matriz[i][j];
+            }
+        }
+         //Exibe um texto indicativo
+        System.out.println("Matriz original");
+        
+        //Laço externo e interno para exibir a transposta
+         for (int i=0 ; i<matriz.length ; i++){
+              for(int j=0 ; j<matriz[0].length ; j++){
+                  //Imprime elementos da  matriz
+                  System.out.print(matriz[i][j]+"");
+              }
+              System.out.println();
+         }
+        
+        //Exibe um texto indicativo
+        System.out.println("Matriz transposta");
+        
+        //Laço externo e interno para exibir a transposta
+         for (int i=0 ; i<transposta.length ; i++){
+              for(int j=0 ; j<transposta[0].length ; j++){
+                  //Imprime elementos da  matriz
+                  System.out.print(transposta[i][j]+"");
+              }
+              System.out.println();
+         }
+         
+    }
+}
