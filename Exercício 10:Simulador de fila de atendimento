@@ -1,0 +1,30 @@
+package com.mycompany.mainlista3;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class ExercicioSimuladordeFila10 extends ClasseAbstrata{
+    
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 10:Simulador de fila de atendimento ");
+        System.out.println("Crie um simulador de fila de atendimento onde clientes entram na fila e sao atendidos um por um.");
+    }
+    
+    @Override
+    public void executar(){
+        //Criação do objeto (fila FIFO) usando Linkedlist
+        Queue<String>fila=new LinkedList<>();
+        
+        //Adiciona elementos na fila
+        fila.add("Cliente A");
+        fila.add("Cliente B");
+        fila.add("Cliente C");
+        
+        //Laço que executa enquanto a fila não estiver vazia
+        while(!fila.isEmpty()){
+            //Poll() remove e retorna o primeiro elemento da lista
+            System.out.println("Atendendo:"+fila.poll());
+        }
+        
+    }
+}
