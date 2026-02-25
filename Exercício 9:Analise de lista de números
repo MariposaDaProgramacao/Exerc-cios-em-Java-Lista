@@ -1,0 +1,54 @@
+package com.mycompany.mainlista3;
+import java.util.Arrays;
+
+public class ExercicioListaNumeros9 extends ClasseAbstrata {
+    
+    @Override
+    public void titulo(){
+        System.out.println("Exercicio 9:Analise de lista de numeros");
+        System.out.println("Faca um programa que analise uma lista de numeros e retorne: maior, menor, media, soma e quantidade de positivos/negativos.");
+    }
+    
+    @Override
+    public void executar(){
+        //Lista a ser analisada
+        int[]numeros={3,-2,7,-5,0,6};
+        System.out.println("Lista de numeros:"+Arrays.toString(numeros));
+        //Inicializar maior e menor e demais com algum valor
+        int maior=numeros[0];
+        int menor=numeros[0];
+        int soma=0;
+        int positivos=0;
+        int negativos=0;
+        
+        //Percorre todo o vetor usando for-each(for gambiarrado)
+        for(int n:numeros){
+            //Soma cada numero encontrado no vetor
+            soma=+n;
+            //Verificar se o numero e atual e maior que o anterior 
+            if(n>maior){
+                maior=n;
+            }
+            //Verificar se o numero atual e menor que o anterior
+             if(n<menor){
+                menor=n;
+            }
+            //Verifica se o numero e positivo
+            if(n>0){
+                positivos++;
+            }
+            if(n<0){
+                negativos++;
+            }
+        }
+        //Exibição dos resultados
+        
+        System.out.println("Maior:"+maior);
+        System.out.println("Menor:"+menor);
+        System.out.println("Soma:"+soma);
+        //Media com casting para evitar divisão inteira
+        System.out.println("Media:"+(double)+soma/numeros.length);
+        System.out.println("Positivos:"+positivos);
+        System.out.println("Negativos:"+negativos);
+    }
+}
